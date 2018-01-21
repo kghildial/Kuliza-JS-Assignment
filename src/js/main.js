@@ -6,7 +6,6 @@
   const female = document.querySelector('#female');
   const idInput = document.querySelector('#id-input');
   const searchBtn = document.querySelector('#search-btn');
-  const details = document.querySelector('.details');
   const detailsList = document.querySelector('.details__list');
 
   let gender = 'All';
@@ -58,6 +57,15 @@
       else {
         searchList(newData, searchID);
       }
+    });
+
+    const listItems = document.querySelectorAll('.list tr');
+
+    listItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        const itemID = item.childNodes[0].textContent;
+        displayDetails(newData, itemID);
+      });
     });
 
   }

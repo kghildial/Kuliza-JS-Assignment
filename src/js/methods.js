@@ -84,6 +84,19 @@ function print(data, id) {
     list.appendChild(tr);
 }
 
+function displayDetails(data, itemID) {
+    const detailsList = document.querySelector('.details__list');
+    for(let id in data) {
+        if(id === itemID) {
+            for(key in data[id]) {
+                let li = document.createElement('li');
+                li.textContent = `${key} : ${data[id][key]}`;
+                detailsList.appendChild(li);
+            }
+        }
+    }
+}
+
 function fadeIn() {
     const listItems = document.querySelectorAll('.list td');
 
@@ -94,5 +107,4 @@ function fadeIn() {
             item.style.opacity = 1;
         }, 80*items.indexOf(item));
     });
-    console.log(items);
 }
