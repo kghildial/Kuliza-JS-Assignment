@@ -64,6 +64,8 @@
     listItems.forEach((item) => {
       item.addEventListener('click', () => {
         const itemID = item.childNodes[0].textContent;
+        active(item);
+        detailsList.innerHTML = '';
         displayDetails(newData, itemID);
       });
     });

@@ -27,6 +27,7 @@ body {
 
 .details {
     float: right;
+    margin-right: 5%;
     .details__list {
         list-style: none;
         background: #ccc;
@@ -51,3 +52,6 @@ body {
     }
 }
 
+.active{
+    background-color: #ccc;
+}

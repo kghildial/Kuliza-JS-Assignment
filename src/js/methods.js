@@ -1,5 +1,5 @@
 const list = document.querySelector('.list');
-
+const detailsList = document.querySelector('.details__list');
 
 function createNewData(data) {
 
@@ -85,11 +85,14 @@ function print(data, id) {
 }
 
 function displayDetails(data, itemID) {
-    const detailsList = document.querySelector('.details__list');
+
     for(let id in data) {
         if(id === itemID) {
+            let li = document.createElement('li');
+            li.innerHTML = `<strong>id :</strong> ${id}`;
+            detailsList.appendChild(li);
             for(key in data[id]) {
-                let li = document.createElement('li');
+                li = document.createElement('li');
                 li.innerHTML = `<strong>${key} :</strong> ${data[id][key]}`;
                 detailsList.appendChild(li);
             }
@@ -107,4 +110,16 @@ function fadeIn() {
             item.style.opacity = 1;
         }, 80*items.indexOf(item));
     });
+}
+
+function active(item) {
+    
+    const trs = document.querySelectorAll('.list tr');
+
+    trs.forEach((tr) => {
+        tr.classList.remove('active');
+    });
+
+    item.classList.add('active');
+    
 }

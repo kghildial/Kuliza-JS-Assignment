@@ -18,7 +18,8 @@ body {
     cursor: pointer; }
 
 .details {
-  float: right; }
+  float: right;
+  margin-right: 5%; }
   .details .details__list {
     list-style: none;
     background: #ccc; }
@@ -35,3 +36,6 @@ body {
   .details {
     float: none;
     text-align: center; } }
+
+.active {
+  background-color: #ccc; }
