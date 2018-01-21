@@ -15,6 +15,7 @@
 
     let newData = createNewData(data);
 
-    console.log(newData);
+    populateList(newData);
+
   }
 })();
