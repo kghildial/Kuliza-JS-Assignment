@@ -20,29 +20,40 @@ function createNewData(data) {
     return newData;
 }
 
-function populateList(data) {
+function populateList(data, gender) {
     let list = document.querySelector('.list');
+    list.innerHTML = '<tr><th class="table-head">ID</th><th class="table-head">Name</th><th class="table-head">Gender</th></tr>';
 
     for(let id in data) {
-        let tr = document.createElement('tr');
-        var td = document.createElement('td');
-        td.textContent = id;
-        tr.appendChild(td);
-        for(let key in data[id]) {
-            if(key === 'first_name' || key === 'gender') {
-                var td = document.createElement('td');
-            }
-            if(key === 'first_name') {
-                td.textContent = data[id][key];
-            }
-            if(key === 'last_name') {
-                td.textContent += ` ${data[id][key]}`;
-            }
-            else if(key === 'gender') {
-                td.textContent = data[id][key];
-            }
-            tr.appendChild(td);
+        if(gender === 'All') {
+            print(list, data, id);
         }
-        list.appendChild(tr);
+        else if(data[id]['gender'] === gender){
+            print(list, data, id);
+        }
     }
+}
+
+function print(list, data, id) {
+
+    let tr = document.createElement('tr');
+    var td = document.createElement('td');
+    td.textContent = id;
+     tr.appendChild(td);
+    for(let key in data[id]) {
+        if(key === 'first_name' || key === 'gender') {
+            var td = document.createElement('td');
+        }
+        if(key === 'first_name') {
+            td.textContent = data[id][key];
+         }
+        if(key === 'last_name') {
+            td.textContent += ` ${data[id][key]}`;
+        }
+        else if(key === 'gender') {
+            td.textContent = data[id][key];
+        }
+        tr.appendChild(td);
+    }
+    list.appendChild(tr);
 }
