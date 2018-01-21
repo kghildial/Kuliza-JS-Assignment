@@ -25,6 +25,17 @@ body {
     }
 }
 
+.details {
+    float: right;
+    .details__list {
+        list-style: none;
+        background: #ccc;
+        li {
+            padding: 20px;
+        }
+    }
+}
+
 @media screen and (max-width: 900px) {
     .list {
         width: 90%;
@@ -34,9 +45,9 @@ body {
     th, td {
         padding: 0px;
     }
+    .details {
+        float: none;
+        text-align: center;
+    }
 }
 
-.details {
-    // display: inline-block;
-    float: right;
-}

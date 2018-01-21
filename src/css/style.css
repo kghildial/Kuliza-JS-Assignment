@@ -17,13 +17,21 @@ body {
     background: #eee;
     cursor: pointer; }
 
+.details {
+  float: right; }
+  .details .details__list {
+    list-style: none;
+    background: #ccc; }
+    .details .details__list li {
+      padding: 20px; }
+
 @media screen and (max-width: 900px) {
   .list {
     width: 90%;
     margin: 0 auto;
     text-align: center; }
   th, td {
-    padding: 0px; } }
-
-.details {
-  float: right; }
+    padding: 0px; }
+  .details {
+    float: none;
+    text-align: center; } }

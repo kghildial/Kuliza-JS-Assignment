@@ -90,7 +90,7 @@ function displayDetails(data, itemID) {
         if(id === itemID) {
             for(key in data[id]) {
                 let li = document.createElement('li');
-                li.textContent = `${key} : ${data[id][key]}`;
+                li.innerHTML = `<strong>${key} :</strong> ${data[id][key]}`;
                 detailsList.appendChild(li);
             }
         }
