@@ -19,11 +19,9 @@ body {
         transition: all .5s ease-in-out;
 
     }
-    tr {
-        &:hover td {
-            background: #eee;
-            cursor: pointer;
-        }
+    tr:hover td {
+        background: #eee;
+        cursor: pointer;
     }
 }
 
