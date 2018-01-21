@@ -24,7 +24,7 @@ function createNewData(data) {
 }
 
 function clearList() {
-    list.innerHTML = '<tr><th class="table-head">ID</th><th class="table-head">Name</th><th class="table-head">Gender</th></tr>';
+    list.innerHTML = '<tr><th class="table-head">ID</th><th class="table-head">Name</th><th class="table-head">Gender</th><th class="table-head">Email</th></tr>';
 }
 
 function searchList(data, searchID) {
@@ -60,7 +60,7 @@ function print(data, id) {
     td.textContent = id;
      tr.appendChild(td);
     for(let key in data[id]) {
-        if(key === 'first_name' || key === 'gender') {
+        if(key === 'first_name' || key === 'email') {
             var td = document.createElement('td');
         }
         if(key === 'first_name') {
@@ -69,7 +69,10 @@ function print(data, id) {
         if(key === 'last_name') {
             td.textContent += ` ${data[id][key]}`;
         }
-        else if(key === 'gender') {
+        else if(key == 'email') {
+            td.textContent = data[id]['gender'];
+            tr.appendChild(td);
+            td = document.createElement('td');
             td.textContent = data[id][key];
         }
         tr.appendChild(td);
