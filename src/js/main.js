@@ -13,7 +13,8 @@
   xhr.onload = () => {
     let data = xhr.response;
 
-    createNewData(data);
+    let newData = createNewData(data);
 
+    console.log(newData);
   }
 })();
