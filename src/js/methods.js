@@ -1,3 +1,4 @@
+const list = document.querySelector('.list');
 
 
 function createNewData(data) {
@@ -22,35 +23,37 @@ function createNewData(data) {
     return newData;
 }
 
-function searchList(data, searchID) {
-    const list = document.querySelector('.list');
+function clearList() {
     list.innerHTML = '<tr><th class="table-head">ID</th><th class="table-head">Name</th><th class="table-head">Gender</th></tr>';
-    
+}
+
+function searchList(data, searchID) {
+    clearList();
+
     for(let id in data) {
         if(searchID === id) {
-            print(list, data, id);
+            print(data, id);
             break;
         }
     }
 }
 
 function populateList(data, gender, searchID) {
-    const list = document.querySelector('.list');
-    list.innerHTML = '<tr><th class="table-head">ID</th><th class="table-head">Name</th><th class="table-head">Gender</th></tr>';
+    clearList();
 
     for(let id in data) {
 
         if(gender === 'All') {
-            print(list, data, id);
+            print(data, id);
         }
         else if(data[id]['gender'] === gender){
-            print(list, data, id);
+            print(data, id);
         }
         
     }
 }
 
-function print(list, data, id) {
+function print(data, id) {
 
     let tr = document.createElement('tr');
     var td = document.createElement('td');
