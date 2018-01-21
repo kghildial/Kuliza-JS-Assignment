@@ -1,3 +1,5 @@
+
+
 function createNewData(data) {
 
     let newData = {};
@@ -20,17 +22,31 @@ function createNewData(data) {
     return newData;
 }
 
-function populateList(data, gender) {
-    let list = document.querySelector('.list');
+function searchList(data, searchID) {
+    const list = document.querySelector('.list');
+    list.innerHTML = '<tr><th class="table-head">ID</th><th class="table-head">Name</th><th class="table-head">Gender</th></tr>';
+    
+    for(let id in data) {
+        if(searchID === id) {
+            print(list, data, id);
+            break;
+        }
+    }
+}
+
+function populateList(data, gender, searchID) {
+    const list = document.querySelector('.list');
     list.innerHTML = '<tr><th class="table-head">ID</th><th class="table-head">Name</th><th class="table-head">Gender</th></tr>';
 
     for(let id in data) {
+
         if(gender === 'All') {
             print(list, data, id);
         }
         else if(data[id]['gender'] === gender){
             print(list, data, id);
         }
+        
     }
 }
 

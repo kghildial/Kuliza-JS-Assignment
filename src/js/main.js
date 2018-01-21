@@ -4,7 +4,11 @@
   const allGenders = document.querySelector('#all');
   const male = document.querySelector('#male');
   const female = document.querySelector('#female');
+  const idInput = document.querySelector('#id-input');
+  const searchBtn = document.querySelector('#search-btn');
+
   let gender = 'All';
+  let searchID = '';
 
   let src = '../json/customer-data.json';
 
@@ -25,18 +29,36 @@
 
     allGenders.addEventListener('click', () => {
       gender = 'All';
-      populateList(newData, gender);
+      idInput.value = '';
+      populateList(newData, gender, searchID);
     });
 
     male.addEventListener('click', () => {
       gender = 'Male';
-      populateList(newData, gender);
+      idInput.value = '';
+      populateList(newData, gender, searchID);
     });
 
     female.addEventListener('click', () => {
       gender = 'Female';
-      populateList(newData, gender);
+      idInput.value = '';
+      populateList(newData, gender, searchID);
+    });
+
+    searchBtn.addEventListener('click', () => {
+      searchID = idInput.value;
+      if(searchID === '') {
+        console.log('No ID Entered!');
+      }
+      else if (Number(searchID) > 1000) {
+        console.log('Invalid ID!');
+      }
+      else {
+        searchList(newData, searchID);
+      }
     });
 
   }
+
+
 })();
