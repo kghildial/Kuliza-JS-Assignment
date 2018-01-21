@@ -98,6 +98,8 @@ function displayDetails(data, itemID) {
             }
         }
     }
+
+    detailsList.classList.add('fade-in');
 }
 
 function fadeIn() {

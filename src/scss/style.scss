@@ -29,6 +29,7 @@ body {
     float: right;
     margin-right: 5%;
     .details__list {
+        transition: opacity 1s ease-in-out;
         list-style: none;
         background: #ccc;
         li {
@@ -51,7 +52,52 @@ body {
         text-align: center;
     }
 }
+h1 {
+    text-align: center;
+}
+
+.filters {
+    text-align: center;
+}
 
 .active{
     background-color: #ccc;
+}
+
+.fade-in {
+    animation: {
+        name: fade-in;
+        duration: 2s;
+    }
+}
+
+@keyframes fade-in {
+    from { opacity: 0 }
+    to { opacity: 1 }
+}
+
+form {
+    display: inline;
+    label {
+        margin-right: 30px;
+    }
+}
+
+#id-input{
+    display: inline-block;
+}
+
+#search-btn {
+    display: inline-block;
+}
+
+button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+
+input[type="text"] {
+    height: 30px;
+    border-radius: 3px;
 }
