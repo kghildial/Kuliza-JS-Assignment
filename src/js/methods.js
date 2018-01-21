@@ -36,6 +36,8 @@ function searchList(data, searchID) {
             break;
         }
     }
+
+    fadeIn();
 }
 
 function populateList(data, gender, searchID) {
@@ -51,6 +53,8 @@ function populateList(data, gender, searchID) {
         }
         
     }
+
+    fadeIn();
 }
 
 function print(data, id) {
@@ -78,4 +82,17 @@ function print(data, id) {
         tr.appendChild(td);
     }
     list.appendChild(tr);
+}
+
+function fadeIn() {
+    const listItems = document.querySelectorAll('.list td');
+
+    const items = Array.prototype.slice.call(listItems);
+
+    items.forEach((item) => {
+        setTimeout(() => {
+            item.style.opacity = 1;
+        }, 80*items.indexOf(item));
+    });
+    console.log(items);
 }

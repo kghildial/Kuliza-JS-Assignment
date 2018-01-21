@@ -6,6 +6,8 @@
   const female = document.querySelector('#female');
   const idInput = document.querySelector('#id-input');
   const searchBtn = document.querySelector('#search-btn');
+  const details = document.querySelector('.details');
+  const detailsList = document.querySelector('.details__list');
 
   let gender = 'All';
   let searchID = '';

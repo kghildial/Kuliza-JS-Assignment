@@ -9,12 +9,21 @@ body {
     float: left;
     th {
         padding: 20px 5px;
-        background: #ccc;
+        background: #aaa;
     }
     td {
+        opacity: 0;
         padding: 30px 10px;
         text-align: center;
-        background-color: #eee;
+        background-color: #ccc;
+        transition: all .5s ease-in-out;
+
+    }
+    tr {
+        &:hover td {
+            background: #eee;
+            cursor: pointer;
+        }
     }
 }
 
