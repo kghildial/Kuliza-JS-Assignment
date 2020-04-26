@@ -12,5 +12,3 @@ Also have tried to make the page responsive.
 * Clone the repository
 * Open the project in the command-line and type: `npm install`
 * Once this is done type: `npm start`
-
-I WELCOME ALL SUGESSTIONS AND CRITICISMS. :)
